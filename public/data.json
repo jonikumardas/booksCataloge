@@ -1,0 +1,267 @@
+{
+    "books": [
+        {
+            "Title": "The Adventure Begins",
+            "Author": "John Smith",
+            "Genre": "Adventure",
+            "Publication Date": "2022-05-15",
+            "image":"https://images-na.ssl-images-amazon.com/images/I/81e5eyI58aL._AC_UL750_SR750,750_.jpg",
+            "price":54,
+            "Reviews": [
+                "A captivating start to the series!",
+                "I couldn't stop reading."
+            ],
+            "Description": "Experience the whirlwind romance between Emily and Ethan against the backdrop of New York City's vibrant streets. From chance encounters to heartfelt confessions, this tale of love and destiny will sweep you off your feet."
+        },
+        {
+            "Title": "Mystery of the Hidden Mansion",
+            "Author": "Alice Johnson",
+            "Genre": "Mystery",
+            "Publication Date": "2023-02-28",
+            "image":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSgTa-uPPrwWcX_zNrlPFwSrBDL6uhdzD6Hn8VZQnWQiWpuHclm7W8hwp6Soe-KCITt0RE&usqp=CAU",
+            "price":50,
+            "Reviews": [
+                "Keeps you guessing till the end.",
+                "Brilliant plot twists!"
+            ],
+            "Description": "Dive into a world of wonder and enchantment where magic flows through every page. Follow young mage Elara as she discovers her true potential in a realm brimming with mythical creatures, ancient spells, and a looming darkness that threatens to consume all."
+        },
+        {
+            "Title": "Fantasy Realm: The Quest for Truth",
+            "Author": "David Williams",
+            "Genre": "Fantasy",
+            "Publication Date": "2021-11-10",
+            "image":"https://m.media-amazon.com/images/I/519QEX+UjMS.jpg",
+            "price":24,
+            "Reviews": [
+                "Immersive world-building.",
+                "An epic fantasy journey."
+            ],
+            "Description": "Join Detective Sarah Turner as she tackles her most baffling case yet. With a mix of old-school detective work and cutting-edge technology, this novel promises a thrilling ride as you attempt to solve the enigma alongside the brilliant detective."
+
+        },
+        {
+            "Title": "Romance by the Lakeside",
+            "Author": "Sophia Roberts",
+            "Genre": "Romance",
+            "Publication Date": "2020-07-22",
+            "image":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTD2Wmaxkp2dSuCayYE2-0IFN1XKGgBt66uKqaJwQRX1eQwAU_MCjc76NnxhbAyAnDK2f4&usqp=CAU",
+            "price":20,
+            "Reviews": [
+                "Heartwarming and beautifully written.",
+                "Perfect for a cozy evening."
+            ],
+            "Description": "Travel back in time to a bygone era with this meticulously researched historical fiction. Follow the lives of ordinary people as they navigate the challenges of their time, offering a vivid glimpse into the past."
+
+        },
+
+        {
+            "Title": "The Adventure Begins",
+            "Author": "John Smith",
+            "Genre": "Adventure",
+            "Publication Date": "2022-05-15",
+            "image":"https://images-na.ssl-images-amazon.com/images/I/81BJpSplDRL._AC_UL600_SR600,600_.jpg",
+            "price":14,
+            "Reviews": [
+                "A captivating start to the series!",
+                "I couldn't stop reading."
+            ],
+            "Description": "Venture into a future where humanity has reached the stars and encountered enigmatic alien civilizations. This collection of mind-bending short stories explores the boundaries of technology, ethics, and the vastness of the cosmos."
+
+        },
+        {
+            "Title": "Mystery of the Hidden Mansion",
+            "Author": "Alice Johnson",
+            "Genre": "Mystery",
+            "Publication Date": "2023-02-28",
+            "image":"https://images-na.ssl-images-amazon.com/images/I/815H5SyrzpL._AC_UL420_SR420,420_.jpg",
+            "price":55,
+            "Reviews": [
+                "Keeps you guessing till the end.",
+                "Brilliant plot twists!"
+            ],
+            "Description": "Experience the tender moments and passionate connections between Emma and Alex as they navigate the challenges of love by the tranquil lakeside. A tale of romance that will warm your heart and leave you yearning for more."
+
+        },
+        {
+            "Title": "Fantasy Realm: The Quest for Truth",
+            "Author": "David Williams",
+            "Genre": "Fantasy",
+            "Publication Date": "2021-11-10",
+            "image":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQU3qqXTplSfe7fhSn4TgSVtDhGYHt-G4kZww&usqp=CAU",
+            "price":154,
+            "Reviews": [
+                "Immersive world-building.",
+                "An epic fantasy journey."
+            ],
+            "Description": "Embark on an epic quest across the sprawling landscapes of Eloria, a world where magic and danger intertwine. Follow a band of unlikely heroes as they seek to uncover the truth behind a looming darkness that threatens their realm."
+
+        },
+        {
+            "Title": "Romance by the Lakeside",
+            "Author": "Sophia Roberts",
+            "Genre": "Romance",
+            "Publication Date": "2020-07-22",
+            "image":"https://images-na.ssl-images-amazon.com/images/I/91grIe0I0nL._AC_UL420_SR420,420_.jpg",
+            "price":45,
+            "Reviews": [
+                "Heartwarming and beautifully written.",
+                "Perfect for a cozy evening."
+            ],
+            "Description": "Step into the shoes of Detective Jane Williams as she attempts to solve the perplexing case of the hidden mansion. With a cast of suspicious characters and a maze of secrets, this mystery will challenge your deductive skills."
+
+        },
+        {
+            "Title": "Sci-Fi Chronicles: Beyond the Stars",
+            "Author": "Michael Anderson",
+            "Genre": "Science Fiction",
+            "Publication Date": "2023-04-05",
+            "image":"https://www.bookgeeks.in/wp-content/uploads/2023/07/A-Few-Thousand-Kilometres-of-Happiness-by-Anand-Krishna-Panicker-Book.jpg",
+            "price":34,
+            "Reviews": [
+                "Mind-bending concepts!",
+                "A must-read for sci-fi enthusiasts."
+            ],
+            "Description": "Join young explorer Sarah on a thrilling journey as she embarks on a quest to uncover ancient artifacts and unravel long-lost mysteries. From hidden tombs to treacherous jungles, this adventure will keep you on the edge of your seat!"
+
+        },
+        {
+            "Title": "Historical Echoes: A Tale of the Past",
+            "Author": "Emily Thompson",
+            "Genre": "Historical Fiction",
+            "Publication Date": "2019-09-08",
+            "image":"https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/hostedimages/1404549171i/10255820.jpg",
+            "price":53,
+            "Reviews": [
+                "Brings history to life.",
+                "Engaging characters and setting."
+            ],
+            "Description": "Amidst the bustling streets of New York, Sarah and Adam's paths cross in a serendipitous encounter that ignites a whirlwind romance. Set against iconic cityscapes, this love story explores the myriad emotions that make the heart beat faster."
+
+        },
+        {
+            "Title": "The Adventure Begins",
+            "Author": "John Smith",
+            "Genre": "Adventure",
+            "Publication Date": "2022-05-15",
+            "image":"https://yalebooksblog.co.uk/wp-content/uploads/sites/4/2023/07/Our-NHS-Wordpress-1050x700-1-600x400.png",
+            "price":61,
+            "Reviews": [
+                "A captivating start to the series!",
+                "I couldn't stop reading."
+            ],
+            "Description": "Journey to a realm where spells weave stories and sorcery shapes destinies. Join apprentice mage Elara as she navigates a world of arcane wonders, mythical creatures, and dark forces in an epic tale of magic's triumph over adversity."
+
+        },
+        {
+            "Title": "Mystery of the Hidden Mansion",
+            "Author": "Alice Johnson",
+            "Genre": "Mystery",
+            "Publication Date": "2023-02-28",
+            "image":"https://ttpl.imgix.net/9789357780278L.png",
+            "price":74,
+            "Reviews": [
+                "Keeps you guessing till the end.",
+                "Brilliant plot twists!"
+            ],
+            "Description": "Follow the enigmatic Detective Alex Turner as he unravels intricate puzzles and untangles webs of deceit in a city gripped by crime. In a race against the clock, discover the truth behind baffling cases and uncover the hidden motives of suspects."
+
+        },
+        {
+            "Title": "Fantasy Realm: The Quest for Truth",
+            "Author": "David Williams",
+            "Genre": "Fantasy",
+            "Publication Date": "2021-11-10",
+            "image":"https://ttplimages.imgix.net/advtimages/16082023_123511_Foreign-Trade-Policy--9789391055004_Centax_Reprint_Book-Store-Featured-Banner.jpg?fm=jpg",
+            "price":45,
+            "Reviews": [
+                "Immersive world-building.",
+                "An epic fantasy journey."
+            ],
+            "Description": "Travel through time with intertwining stories that bridge eras, revealing the threads that connect generations. From the medieval countryside to the bustling streets of the industrial revolution, experience the echoes of the past in vivid detail."
+
+        },
+        {
+            "Title": "Romance by the Lakeside",
+            "Author": "Sophia Roberts",
+            "Genre": "Romance",
+            "Publication Date": "2020-07-22",
+            "image":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT9u9M_noih_SP9gHeU_4kFaKnvLjmP7nhgPw&usqp=CAU",
+            "price":32,
+            "Reviews": [
+                "Heartwarming and beautifully written.",
+                "Perfect for a cozy evening."
+            ],
+            "Description": "Dive headfirst into a universe of technological marvels and extraterrestrial encounters. Through a collection of thought-provoking tales, explore the intricate dance between humanity's ambition and the mysteries of the cosmos."
+
+        },
+        {
+            "Title": "Sci-Fi Chronicles: Beyond the Stars",
+            "Author": "Michael Anderson",
+            "Genre": "Science Fiction",
+            "Publication Date": "2023-04-05",
+            "image":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcScKlqb1RSP3Ibx0g4MpbJ19X_THBSui-SCPEy302mdxartowav_RrIc9TR2BsHTzJ21Bk&usqp=CAU",
+            "price":37,
+            "Reviews": [
+                "Mind-bending concepts!",
+                "A must-read for sci-fi enthusiasts."
+            ],
+            "Description": "Escape to the idyllic lakeside setting where Olivia and James's worlds collide, igniting a passionate romance that transcends time and challenges. Amidst picturesque landscapes and heartfelt emotions, this novel celebrates the magic of love."
+        },
+        {
+            "Title": "Historical Echoes: A Tale of the Past",
+            "Author": "Emily Thompson",
+            "Genre": "Historical Fiction",
+            "Publication Date": "2019-09-08",
+            "image":"https://www.historic-newspapers.co.uk/wp-content/uploads/sites/5/2023/03/ns-dmi-football-rangers-10.jpg",
+            "price":23,
+            "Reviews": [
+                "Brings history to life.",
+                "Engaging characters and setting."
+            ],
+            "Description": "Journey into the enchanting land of Arindor, where unlikely heroes must unite to confront an ancient evil that threatens to plunge the realm into darkness. With magic, monsters, and moments of triumph, this tale explores themes of courage, friendship, and destiny."
+        },
+        {
+            "Title": "Whodunit: The Enigmatic Detective",
+            "Author": "Richard Holmes",
+            "Genre": "Mystery",
+            "Publication Date": "2023-07-14",
+            "image":"https://www.thesecret.tv/wp-content/uploads/2015/04/the-secret-book-cover-img.png",
+            "price":47,
+            "Reviews": [
+                "Classic mystery feel with a modern twist.",
+                "Couldn't guess the ending!"
+            ],
+            "Description": "Enter the shadowy world of intrigue and suspense as Detective Laura Simmons races against time to solve the perplexing puzzle of the hidden mansion. Uncover dark secrets, follow cryptic clues, and immerse yourself in a mystery that will leave you breathless."
+
+        },
+        {
+            "Title": "Realm of Magic: Spells & Sorcery",
+            "Author": "Luna Evergreen",
+            "Genre": "Fantasy",
+            "Publication Date": "2022-09-30",
+            "image":"https://cdn.waterstones.com/images/00290047-580x483.jpeg",
+            "price":25,
+            "Reviews": [
+                "A magical world that enchants readers.",
+                "Spellbinding storytelling."
+            ],
+            "Description": "Embark on an epic journey with young adventurer Max as he sets out to uncover ancient secrets and conquer dangerous lands. Filled with daring escapades, unexpected alliances, and heart-pounding challenges, this book promises an unforgettable adventure for all ages."
+
+        },
+        {
+            "Title": "Love in the City That Never Sleeps",
+            "Author": "Alex Walker",
+            "Genre": "Romance",
+            "Publication Date": "2021-01-05",
+            "image":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTFvunRV0PW23YHhhVHvkL92ubvpvHpUVrYOg&usqp=CAU",
+            "price":18,
+            "Reviews": [
+                "Captures the essence of New York and romance.",
+                "Couldn't put it down!"
+            ],
+            "Description": "Travel back in time to a bygone era with this meticulously researched historical fiction. Follow the lives of ordinary people as they navigate the challenges of their time, offering a vivid glimpse into the past."
+ 
+        }
+    ]
+}
