@@ -1,9 +1,11 @@
+
 const CheckOur = () => {
-    return (
-        <div>
-            this is checkout
-        </div>
-    );
+  return (
+    <div>
+      hello check CheckOut
+      
+    </div>
+  );
 };
 
 export default CheckOur;

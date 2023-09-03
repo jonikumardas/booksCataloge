@@ -1,8 +1,9 @@
 import Hero from "../layout/hero";
+
 const Home = () => {
   return (
     <div>
-         <Hero></Hero>
+      <Hero></Hero>
     </div>
   );
 };
