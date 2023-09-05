@@ -9,12 +9,13 @@ import {
   AiTwotoneCalculator,
   AiTwotoneSetting,
 } from "react-icons/ai";
-import "../style/seach.css";
+import "../style/search.css";
+import '../style/shere.css'
 const Navber = () => {
   return (
-    <div
+    <div 
       style={{ background: "#fffffe" }}
-      className="flex justify-between navbar bg-base-100 shadow-2xl"
+      className="flex justify-evenly navbar bg-base-100 shadow-2xl"
     >
       <div className="navbar-start">
         <div className="dropdown">
@@ -163,7 +164,7 @@ const Navber = () => {
             <input id="my-drawer-5" type="checkbox" className="drawer-toggle" />
             <div className="drawer-content">
               {/* Page content here */}
-              <label htmlFor="my-drawer-5" className="btn mx-1 lg:text-2xl">
+              <label htmlFor="my-drawer-5" className="btn mx-1 lg:text-2xl coustom-button">
                 <AiOutlineShoppingCart />
               </label>
             </div>

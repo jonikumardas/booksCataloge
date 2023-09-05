@@ -1,8 +1,8 @@
 
 const AllBooks = () => {
     return (
-        <div>
-            there is all books 
+        <div className="container">
+           <p className="text-2xl">Top seller</p>
         </div>
     );
 };

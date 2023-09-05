@@ -16,7 +16,7 @@ function App() {
         <Route path="/books" component={AllBooks} />
         <Route path="/bookDetails/:id" component={BooksDetails} />
         <Route path="/check-out" component={CheckOur} />
-        <Route path="/login" component={LogInpage} />
+        <Route path="/log-in" component={LogInpage} />
         <Route path="/sign-up" component={SignUp} />
         <Route path="*" component={Notfound} />
       </Switch>
