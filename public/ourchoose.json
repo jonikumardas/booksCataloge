@@ -1,0 +1,83 @@
+[
+    {
+      "id": 1,
+      "title": "The Great Gatsby",
+      "author": "F. Scott Fitzgerald",
+      "genre": "Fiction",
+      "publication_date": "1925-04-10",
+      "reviews": [
+        {
+          "rating": 5,
+          "comment": "A timeless classic!"
+        },
+        {
+          "rating": 4,
+          "comment": "Beautifully written."
+        }
+      ],
+      "image": "great_gatsby.jpg",
+      "description": "The Great Gatsby is a novel by F. Scott Fitzgerald...",
+      "price": 15.99
+    },
+    {
+      "id": 2,
+      "title": "To Kill a Mockingbird",
+      "author": "Harper Lee",
+      "genre": "Fiction",
+      "publication_date": "1960-07-11",
+      "reviews": [
+        {
+          "rating": 5,
+          "comment": "A must-read for everyone!"
+        },
+        {
+          "rating": 4,
+          "comment": "Thought-provoking."
+        }
+      ],
+      "image": "to_kill_a_mockingbird.jpg",
+      "description": "To Kill a Mockingbird is a novel by Harper Lee...",
+      "price": 14.95
+    },
+    {
+      "id": 3,
+      "title": "1984",
+      "author": "George Orwell",
+      "genre": "Science Fiction",
+      "publication_date": "1949-06-08",
+      "reviews": [
+        {
+          "rating": 5,
+          "comment": "A dystopian masterpiece!"
+        },
+        {
+          "rating": 3,
+          "comment": "Dark and unsettling."
+        }
+      ],
+      "image": "1984.jpg",
+      "description": "1984 is a dystopian novel by George Orwell...",
+      "price": 12.99
+    },
+    {
+      "id": 4,
+      "title": "The Catcher in the Rye",
+      "author": "J.D. Salinger",
+      "genre": "Fiction",
+      "publication_date": "1951-07-16",
+      "reviews": [
+        {
+          "rating": 4,
+          "comment": "A coming-of-age classic!"
+        },
+        {
+          "rating": 3,
+          "comment": "Relevant even today."
+        }
+      ],
+      "image": "catcher_in_the_rye.jpg",
+      "description": "The Catcher in the Rye is a novel by J.D. Salinger...",
+      "price": 13.99
+    }
+  ]
+  

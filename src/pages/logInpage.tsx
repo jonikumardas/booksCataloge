@@ -1,40 +1,57 @@
 import { Link } from "react-router-dom";
-import { FaFacebook, FaGithub, FaGoogle } from "react-icons/fa";
-import '../style/login.css'
+import "../style/login.css";
+import SocialLogin from "../components/ui/SocialLogin";
+import { signInWithEmailAndPassword } from "firebase/auth";
+import auth from "../firebase/Firebase";
+import { useState } from "react";
+import { toast } from "react-toast";
 
 const Login = () => {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const hendleLogin = (e) => {
+    e.preventDefault();
+    setEmail(e.target.email.value);
+    setPassword(e.target.password.value);
+    signInWithEmailAndPassword(auth, email, password)
+      .then((userCredential) => {
+        const user = userCredential.user;
+        toast(`Log successfull ${user.email}`);
+        setEmail("");
+        setPassword("");
+      })
+      .catch((error) => {
+        const errorMessage = error.message;
+        toast(`error: ${errorMessage}`);
+      });
+  };
   return (
     <div>
       <div className="login-box">
         <p className=" text-white font-bold text-3xl text-center">Log in </p>
-        <form>
+        <form onSubmit={hendleLogin}>
           <div className="user-box">
-            <input type="text" name="" required />
+            <input type="text" name="email" required />
             <label>Username</label>
           </div>
           <div className="user-box">
-            <input type="password" name="" required />
+            <input type="password" name="password" required />
             <label>Password</label>
           </div>
           <center>
-            <button className="buton btn bg-slate-900 ">logIn</button>
+            <button type="submit" className="buton btn bg-slate-900 ">logIn</button>
             <span></span>
           </center>
         </form>
         <div className="social-message">
           <div className="line"></div>
-          <p className="message text-white mt-3 navigete">Login with social accounts</p>
+          <p className="message text-white mt-3 navigete">
+            Login with social accounts
+          </p>
           <div className="line"></div>
-        </div>   
+        </div>
         <div className="social-icons">
-          <button aria-label="Log in with Google" className="icon mx-4 hover:shadow-xl">
-            <FaFacebook />
-          </button>
-          <button aria-label="Log in with Twitter" className="icon mx-4 hover:shadow-xl">
-          <FaGoogle />
-          </button>
-          <button aria-label="Log in with GitHub" className="icon mx-4 hover:shadow-xl">    <FaGithub /></button>
-      
+          <SocialLogin></SocialLogin>
         </div>
         <p className="signup text-white navigete">
           Don't have an account?

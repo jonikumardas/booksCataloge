@@ -1,10 +1,11 @@
 import Slider from 'react-slick';
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
+import Slide from './slide';
 
 const books = [
-        {
-          Title: "Fantasy Realm: The Quest for Truth",
+        { id:1,
+          Title: "Fantasy of Quest for Truth",
           Author: "David Williams",
           Genre: "Fantasy",
           "Publication Date": "2021-11-10",
@@ -16,7 +17,7 @@ const books = [
           ],
           Description: "Travel through time with intertwining stories that bridge eras, revealing the threads that connect generations. From the medieval countryside to the bustling streets of the industrial revolution, experience the echoes of the past in vivid detail."
         },
-        {
+        {id:2,
           Title: "Romance by the Lakeside",
           Author: "Sophia Roberts",
           Genre: "Romance",
@@ -29,8 +30,8 @@ const books = [
           ],
           Description: "Dive headfirst into a universe of technological marvels and extraterrestrial encounters. Through a collection of thought-provoking tales, explore the intricate dance between humanity's ambition and the mysteries of the cosmos."
         },
-        {
-          Title: "Sci-Fi Chronicles: Beyond the Stars",
+        {id:3,
+          Title: "Sci-Fi Chronicle the Stars",
           Author: "Michael Anderson",
           Genre: "Science Fiction",
           "Publication Date": "2023-04-05",
@@ -42,8 +43,8 @@ const books = [
           ],
           Description: "Escape to the idyllic lakeside setting where Olivia and James's worlds collide, igniting a passionate romance that transcends time and challenges. Amidst picturesque landscapes and heartfelt emotions, this novel celebrates the magic of love."
         },
-        {
-          Title: "Historical Echoes: A Tale of the Past",
+        {id:4,
+          Title: "Historical of the Past",
           Author: "Emily Thompson",
           Genre: "Historical Fiction",
           "Publication Date": "2019-09-08",
@@ -55,8 +56,8 @@ const books = [
           ],
           Description: "Journey into the enchanting land of Arindor, where unlikely heroes must unite to confront an ancient evil that threatens to plunge the realm into darkness. With magic, monsters, and moments of triumph, this tale explores themes of courage, friendship, and destiny."
         },
-        {
-          Title: "Whodunit: The Enigmatic Detective",
+        {id:5,
+          Title: " The Enigmatic Detective",
           Author: "Richard Holmes",
           Genre: "Mystery",
           "Publication Date": "2023-07-14",
@@ -68,8 +69,8 @@ const books = [
           ],
           Description: "Enter the shadowy world of intrigue and suspense as Detective Laura Simmons races against time to solve the perplexing puzzle of the hidden mansion. Uncover dark secrets, follow cryptic clues, and immerse yourself in a mystery that will leave you breathless."
         },
-        {
-          Title: "Realm of Magic: Spells & Sorcery",
+        {id:6,
+          Title: "Realm of Magic & Sorcery",
           Author: "Luna Evergreen",
           Genre: "Fantasy",
           "Publication Date": "2022-09-30",
@@ -81,28 +82,47 @@ const books = [
           ],
           Description: "Embark on an epic journey with young adventurer Max as he sets out to uncover ancient secrets and conquer dangerous lands. Filled with daring escapades, unexpected alliances, and heart-pounding challenges, this book promises an unforgettable adventure for all ages."
         }
-      ];
-      
-      // Now, you have an array of book objects to work with.
-      
-
+];
 const BookSlider = () => {
-    const settings = {
-        dots: true,
-        infinite: true,
-        speed: 500,
-        slidesToShow: 2,
-        slidesToScroll: 1
-      };
+  const settings = {
+    dots: true,
+    infinite: false,
+    speed: 500,
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    initialSlide: 1,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll:1,
+          infinite: true,
+          dots: true
+        }
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          initialSlide: 1
+        }
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1
+        }
+      }
+    ]
+  };
   return (
-    <div className="book-slider">
+    <div className='lg:mx-20'>
       <Slider {...settings}>
-        {books.map((book) => (
-          <div key={book.Genre.length} className=" w-52 bg-black book-slide">
-            <img src={book.image} alt={book.Author} />
-            <h3>{book.Title}</h3>
-            <p>{book.Author}</p>
-          </div>
+        {books.map((book) => (<Slide key={book.id}slidedata={book}        
+        />
         ))}
       </Slider>
     </div>

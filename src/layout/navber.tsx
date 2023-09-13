@@ -15,7 +15,7 @@ const Navber = () => {
   return (
     <div 
       style={{ background: "#fffffe" }}
-      className="flex justify-evenly navbar bg-base-100 shadow-2xl"
+      className="flex justify-evenly navbar bg-base-100 shadow-2xl sticky"
     >
       <div className="navbar-start">
         <div className="dropdown">
