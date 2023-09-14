@@ -10,10 +10,10 @@ import {
   AiTwotoneSetting,
 } from "react-icons/ai";
 import "../style/search.css";
-import '../style/shere.css'
+import "../style/shere.css";
 const Navber = () => {
   return (
-    <div 
+    <div
       style={{ background: "#fffffe" }}
       className="flex justify-evenly navbar bg-base-100 shadow-2xl sticky"
     >
@@ -130,16 +130,16 @@ const Navber = () => {
                     fevourite
                   </NavLink>
                 </li>
+                <li>
+                  <NavLink to="/log-in" className=" m-1">
+                    Log in
+                  </NavLink>
+                </li>
 
                 <li>
                   <NavLink to="/settings" className=" m-1">
                     <AiTwotoneSetting />
                     Settings
-                  </NavLink>
-                </li>
-                <li>
-                  <NavLink to="/log-in" className=" m-1">
-                    Log in
                   </NavLink>
                 </li>
               </ul>
@@ -159,12 +159,14 @@ const Navber = () => {
         </div>
 
         <div>
-
-        <div className="drawer drawer-end">
+          <div className="drawer drawer-end">
             <input id="my-drawer-5" type="checkbox" className="drawer-toggle" />
             <div className="drawer-content">
               {/* Page content here */}
-              <label htmlFor="my-drawer-5" className="btn mx-1 lg:text-2xl coustom-button">
+              <label
+                htmlFor="my-drawer-5"
+                className="btn mx-1 lg:text-2xl coustom-button"
+              >
                 <AiOutlineShoppingCart />
               </label>
             </div>

@@ -5,8 +5,8 @@ import LogInpage from './pages/logInpage';
 import BooksDetails from './components/ui/BooksDetails';
 import AllBooks from './components/ui/AllBooks';
 import CheckOur from './pages/CheckOur';
-import SignUp from './pages/signUp';
 import Navber from './layout/navber';
+import SignUp from './pages/signUp';
 function App() {
   return (
     <Router>

@@ -1,57 +1,72 @@
 import { Link } from "react-router-dom";
 import "../style/login.css";
 import { useState } from "react";
-import { createUserWithEmailAndPassword } from "firebase/auth";
-import auth from "../firebase/Firebase";
 import { ToastContainer, toast } from "react-toast";
 import SocialLogin from "../components/ui/SocialLogin";
-const Signup = () => {
-  const [password, setPassword] = useState("");
-  const [email, setEmail] = useState("");
+import { createUserWithEmailAndPassword, getAuth } from "firebase/auth";
 
-  const hendleSignIn = (e) => {
+const SignUp = () => {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
+
+  const handleSignup = async (e) => {
     e.preventDefault();
-    setEmail(e.target.email.value);
-    const password1 = e.target.password.value;
-    const confirm = e.target.confirm.value;
-    if (password1 == confirm) {
-      setPassword(password1);
-      createUserWithEmailAndPassword(auth, email, password)
-        .then((userCredential) => {
-          const user = userCredential.user;
-          toast(`Regester successfull ${user.email}`);
-          setEmail("");
-          setPassword("");
-        })
-        .catch((error) => {
-          const errorCode = error.code;
-          const errorMessage = error.message;
-          console.log(errorMessage, errorCode);
-        });
+    if (password !== confirmPassword) {
+      toast("Passwords do not match.");
+      return;
+    }
+    try {
+      const auth = getAuth();
+      await createUserWithEmailAndPassword(auth, email, password);
+      toast("Signup successful!");
+      // Clear input fields by resetting state
+      setEmail("");
+      setPassword("");
+      setConfirmPassword("");
+    } catch (error) {
+      toast("Error: User create failed");
     }
   };
 
   return (
     <div>
-      <ToastContainer />
       <div className="login-box">
-        <p className=" text-white font-bold text-center text-3xl">Sign Up </p>
-        <form onSubmit={hendleSignIn}>
+        <p className=" text-white font-bold text-center text-3xl">Sign Up</p>
+        <form onSubmit={handleSignup}>
           <div className="user-box">
-            <input type="email" name="email" required />
+            <input
+              type="email"
+              name="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              required
+            />
             <label>User email</label>
           </div>
           <div className="user-box">
-            <input type="password" name="password" required />
+            <input
+              type="password"
+              name="password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              required
+            />
             <label>Password</label>
           </div>
           <div className="user-box">
-            <input type="password" name="confirm" required />
+            <input
+              type="password"
+              name="Confirm Password"
+              value={confirmPassword}
+              onChange={(e) => setConfirmPassword(e.target.value)}
+              required
+            />
             <label>Confirm password</label>
           </div>
           <center>
-            <button type="submit" className="buton btn bg-slate-900 ">
-              Regester
+            <button type="submit" className="buton btn bg-slate-900">
+              Register
             </button>
             <span></span>
           </center>
@@ -63,7 +78,10 @@ const Signup = () => {
           </p>
           <div className="line"></div>
         </div>
-       <SocialLogin></SocialLogin>
+        <div className="my-3">
+        <SocialLogin></SocialLogin>
+        </div>
+        
         <p className="signup text-white navigete">
           Already have an account?
           <Link to="/log-in" className="mx-2 p-1 buton font-bold">
@@ -71,8 +89,27 @@ const Signup = () => {
           </Link>
         </p>
       </div>
+      <ToastContainer />
     </div>
   );
 };
 
-export default Signup;
+export default SignUp;  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

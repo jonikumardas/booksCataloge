@@ -5,45 +5,65 @@ import book2 from "../assets/science.jpg";
 import book3 from "../assets/img.jpg";
 const Hero = () => {
   return (
-    <div className="hero min-h-screen bg-base-100 shadow-sm">
+    <div className="hero min-h-screen bg-base-100">
       <div className="hero-content flex-col lg:flex-row-reverse">
-        <div className="avatar-group -space-x-7">
-          <div className="z-30 ">
-            <div >
+        <div className="cube-container">
+          <div className="cube">
+            <div className="face front">
               <img
                 src={book1}
-                className="rounded-xl w-36 h-40 lg:w-72 lg:h-72 borderImage1"
+                style={{ width: "200px", height: "200px" }}
+                alt="book"
               />
             </div>
-          </div>
-          <div className="z-20 shadow-lg hover:z-30 ">
-            <div >
+            <div className="face back">
               <img
                 src={book2}
-                className="rounded-xl w-36 mt-1 h-36 lg:w-72 lg:h-64 borderImage2"
+                style={{ width: "200px", height: "200px" }}
+                alt="boock"
               />
             </div>
-          </div>
-          <div className="z-10 shadow-lg hover:z-40">
-            <div>
+            <div className="face right">
               <img
                 src={book3}
-                className="rounded-xl w-36 h-32 mt-2 lg:w-72 lg:h-60 borderImage3 "
+                alt="book"
+                style={{ width: "200px", height: "200px" }}
+              />
+            </div>
+            <div className="face left">
+              <img
+                src={book1}
+                alt="book"
+                style={{ width: "200px", height: "200px" }}
+              />
+            </div>
+            <div className="face top">
+              <img
+                src={book2}
+                alt="boock"
+                style={{ width: "200px", height: "200px" }}
+              />
+            </div>
+            <div className="face bottom">
+              <img
+                src={book3}
+                alt="book"
+                style={{ width: "200px", height: "200px" }}
               />
             </div>
           </div>
         </div>
+
         <div>
-          <h1 className="text-5xl">New Releases This Week</h1>
-          <p>
+          <h1 className="text-5xl font-bold">New Releases This Week!</h1>
+          <p className="py-6">
+            {" "}
             It's time to update your reading list with some of the latest and
-            greatest releases in the literary world. From heart-pumping
-            thrillers to captivating memoirs, this week's releases offer
-            something for everyone.
+            greatest releases in the literary world.From heart-pumping thrillers
+            to captivating memoirs, this week's releases offer something for
+            everyone..
           </p>
-          <button className="btn mt-2 coustom-button">
-            explore more &rarr;
-          </button>
+          <button className="btn coustom-button">explore more &rarr;</button>
         </div>
       </div>
     </div>

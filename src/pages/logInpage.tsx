@@ -1,45 +1,56 @@
 import { Link } from "react-router-dom";
 import "../style/login.css";
 import SocialLogin from "../components/ui/SocialLogin";
-import { signInWithEmailAndPassword } from "firebase/auth";
-import auth from "../firebase/Firebase";
 import { useState } from "react";
-import { toast } from "react-toast";
-
+import { ToastContainer, toast } from "react-toast";
+import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const hendleLogin = (e) => {
+  const handleLogin = async (e) => {
     e.preventDefault();
-    setEmail(e.target.email.value);
-    setPassword(e.target.password.value);
-    signInWithEmailAndPassword(auth, email, password)
-      .then((userCredential) => {
-        const user = userCredential.user;
-        toast(`Log successfull ${user.email}`);
-        setEmail("");
-        setPassword("");
-      })
-      .catch((error) => {
-        const errorMessage = error.message;
-        toast(`error: ${errorMessage}`);
-      });
+    try {
+      const auth = getAuth();
+      await signInWithEmailAndPassword(auth, email, password);
+      toast("Login successful!");
+      // Clear input fields by resetting state
+      setEmail("");
+      setPassword("");
+    } catch (FirebaseError) {
+      console.log(FirebaseError);
+      setEmail("");
+      setPassword("");
+      toast("Error:Make sure Your login info Valied",);
+    }
   };
   return (
     <div>
       <div className="login-box">
         <p className=" text-white font-bold text-3xl text-center">Log in </p>
-        <form onSubmit={hendleLogin}>
+        <form onSubmit={handleLogin}>
           <div className="user-box">
-            <input type="text" name="email" required />
+            <input
+              type="text"
+              name="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              required
+            />
             <label>Username</label>
           </div>
           <div className="user-box">
-            <input type="password" name="password" required />
+            <input
+              type="password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              required
+            />
             <label>Password</label>
           </div>
           <center>
-            <button type="submit" className="buton btn bg-slate-900 ">logIn</button>
+            <button type="submit" className="buton btn bg-slate-900 ">
+              logIn
+            </button>
             <span></span>
           </center>
         </form>
@@ -50,7 +61,7 @@ const Login = () => {
           </p>
           <div className="line"></div>
         </div>
-        <div className="social-icons">
+        <div className="social-icons my-3">
           <SocialLogin></SocialLogin>
         </div>
         <p className="signup text-white navigete">
@@ -60,6 +71,7 @@ const Login = () => {
           </Link>
         </p>
       </div>
+      <ToastContainer></ToastContainer>
     </div>
   );
 };
