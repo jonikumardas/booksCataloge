@@ -1,11 +1,12 @@
-export interface Book {
-    id: number;
-    Title: string;
-    Author: string;
-    Genre: string;
-    "Publication Date": string;
-    image: string;
-    price: number;
-    Reviews: string[];
-    Description: string;
+export interface IBook {
+  _id: string;
+  Title: string;
+  image: string;
+  Description: string;
+  price: number;
+  Author: string;
+  Genre: string;
+  Publication: string;
+  quantity?: number;
+  Reviews?: string | string[];
 }

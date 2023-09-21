@@ -3,17 +3,17 @@ import Home from './pages/home';
 import Notfound from './pages/Notfound';
 import LogInpage from './pages/logInpage';
 import BooksDetails from './components/ui/BooksDetails';
-import AllBooks from './components/ui/AllBooks';
 import CheckOur from './pages/CheckOur';
 import Navber from './layout/navber';
 import SignUp from './pages/signUp';
+import Books from './pages/Books';
 function App() {
   return (
     <Router>
       <Navber></Navber>
       <Switch>
         <Route path="/" exact component={Home} />
-        <Route path="/books" component={AllBooks} />
+        <Route path="/books" component={Books} />
         <Route path="/bookDetails/:id" component={BooksDetails} />
         <Route path="/check-out" component={CheckOur} />
         <Route path="/log-in" component={LogInpage} />

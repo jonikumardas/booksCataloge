@@ -1,26 +1,28 @@
 import "../../style/shere.css";
-const Slide = ({ slidedata }) => {
+import { IBook } from "../../types/Book";
+
+const Slide: React.FC<{ slidedata: IBook }> = ({ slidedata }) => {
+  // console.log(slidedata);
   const { image, Title, Description, price, Author } = slidedata;
-  const imageWidth = '300px';
-  const imageHeight = '250px'
   return (
-    <div className="card lg:card-side bg-base-100 shadow-xl mx-5">
-  <figure>
-    <img src={image} 
-    alt="Album"
-    style={{ width: imageWidth, height: imageHeight }}
-    />
-  </figure>
-  <div className="card-body">
-    <h2 className="card-title">{Title}</h2>
-    <p className="text-sm text-gray-700">{Author}</p>
-    <p>{Description.slice(0, 99)}</p>
-    <p>price:${price}</p>
-    <div className="card-actions justify-end">
-      <button className=" btn btn-sm coustom-button">Add to card</button>
-    </div>
-  </div>
-</div>
+    <>
+      <div className="lg:flex justify-between w-96 border-4 rounded-lg my-20 bg-white">
+        <div className="image lg:w-80 ">
+          <img src={image} className="lg:w-60 h-64 w-80 mx-auto" alt="boock image " />
+        </div>
+        <div className="m-3">
+            <h2 className="card-title">{Title.slice(0, 10)}</h2>
+            <h4 className="text-sm">{Author.slice(0, 10)}</h4>
+            <p>{Description.slice(0, 80)}</p>
+            <p>Price:${price}</p>
+            <p>Revews:5</p>
+            <div className="card-actions justify-end">
+              <button className="btn coustom-button">Add to card</button>
+            </div>
+          
+        </div>
+      </div>
+    </>
   );
 };
 

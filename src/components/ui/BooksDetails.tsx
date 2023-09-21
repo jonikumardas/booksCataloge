@@ -1,32 +1,52 @@
-// import { useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
+import { useGetBooksQuery } from "../../redux/Api/fetures/Books/Books";
 import "../../style/shere.css";
+import { IBook } from "../../types/Book";
 const BooksDetails = () => {
-  //   const params = useParams();
+  const { id } = useParams<{ id: string }>();
+  const { data, isLoading, isError } = useGetBooksQuery(undefined);
+  if (isLoading) {
+    return <p>Loading...</p>;
+  }
+
+  if (isError) {
+    return <p>Error:" error not data loading"</p>;
+  }
+
+  if (!Array.isArray(data?.data)) {
+    return <p>Data is not an array.</p>;
+  }
+
+  if (data.data.length === 0) {
+    return <p>No books available.</p>;
+  }
+  const books = data.data;
+  const book = books.find((book: IBook) => book._id == id);
   return (
-    <div className="max-w-lg bg-base-100 shadow-xl mx-auto my-32">
-      <div className="hero-content flex-col lg:flex-row">
-        <figure>
-          <img className="m-5 rounded-sm"
-            src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Gutenberg_Bible%2C_Lenox_Copy%2C_New_York_Public_Library%2C_2009._Pic_01.jpg/640px-Gutenberg_Bible%2C_Lenox_Copy%2C_New_York_Public_Library%2C_2009._Pic_01.jpg"
-            alt="Shoes"
-          />
-        </figure>
+    <div className=" hero-content bg-base-100 shadow-xl mx-auto lg:my-10 sm:my-10" >
+      <div className=" flex-col lg:flex-row">
+        <img className="m-5 rounded-sm" src={book.image} alt="Shoes" />
         <div className="card-body">
           <h2 className="card-title">
-            Shoes!
+            {book.Title}
             <div className="badge badge-secondary">NEW</div>
           </h2>
-          <h4>Auther:Mc Khalumans</h4>
-          <p>If a dog chews shoes whose shoes does he choose?</p>
-          <p>Price:$50</ p>
+          <h4>Auther: {book.Author}</h4>
+          <p> {book.Description}</p>
+          <p>Genre: {book.Genre}</p>
+          <p>Price: ${book.price}</p>
           <div className="card-actions justify-end">
-            <div className="btn btn-sm coustom-button mx-5">Add to cart</div>
+            <button className="btn btn-sm coustom-button mx-5">Add to cart</button>
           </div>
         </div>
-      </div>
-      <div className="flex justify-between lg:mx-10 px-5">
-      <textarea placeholder="Comment here" className="textarea textarea-bordered textarea-md w-full" ></textarea>
-        <button type="submit" className="btn coustom-button mx-5">
+
+
+        <div className="flex justify-between lg:mx-10">
+        <textarea
+          placeholder="Comment here"
+          className="textarea textarea-bordered textarea-md w-full"
+        ></textarea>
+        <button type="submit" className="btn btn-sm coustom-button mx-5">
           Comment
         </button>
       </div>
@@ -38,7 +58,10 @@ const BooksDetails = () => {
         <p>best chose forever choose</p>
         <p>dam ta onk basi hoiya gesa</p>
       </div>
-      
+
+
+      </div>
+     
     </div>
   );
 };

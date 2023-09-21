@@ -7,6 +7,7 @@
   height: 200px;
   perspective: 800px;
   margin: 50px auto;
+  z-index: -50000;
 }
 
 .cube {
@@ -15,6 +16,7 @@
   height: 100%;
   transform-style: preserve-3d;
   animation: rotate 10s infinite linear;
+  z-index: -50000
 }
 
 .face {
@@ -26,7 +28,7 @@
   text-align: center;
   line-height: 200px;
   background: transparent;
-  opacity: 0.9;
+  opacity: 1;
   border: 2px solid;
   border-image: linear-gradient(to right, #6bdfff, #1586ea, #b8e791, #73cf16, #e87575) 1;
   box-shadow: 0 0 100px rgb(247, 12, 219);

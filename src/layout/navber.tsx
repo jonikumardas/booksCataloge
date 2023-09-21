@@ -11,11 +11,12 @@ import {
 } from "react-icons/ai";
 import "../style/search.css";
 import "../style/shere.css";
+import Card from "../components/ui/card";
 const Navber = () => {
   return (
     <div
       style={{ background: "#fffffe" }}
-      className="flex justify-evenly navbar bg-base-100 shadow-2xl sticky"
+      className="flex justify-evenly navbar bg-base-100 shadow-2xl relative sticky-top "
     >
       <div className="navbar-start">
         <div className="dropdown">
@@ -65,7 +66,7 @@ const Navber = () => {
           <div className="search hover:shadow-xl me-2">
             <input
               placeholder="What are you looking for?"
-              className="w-52 text-sm"
+              className="lg:w-52 text-sm"
               type="text"
             />
             <button type="submit">
@@ -159,7 +160,8 @@ const Navber = () => {
         </div>
 
         <div>
-          <div className="drawer drawer-end">
+          <div className="drawer drawer-end relative
+          ">
             <input id="my-drawer-5" type="checkbox" className="drawer-toggle" />
             <div className="drawer-content">
               {/* Page content here */}
@@ -173,13 +175,7 @@ const Navber = () => {
             <div className="drawer-side">
               <label htmlFor="my-drawer-5" className="drawer-overlay" />
               <div className="menu p-4 w-80 min-h-full bg-gray-200 text-base-content">
-                <span className="font-bold text-lg">8 Items</span>
-                <span className="text-info">Subtotal: $999</span>
-                <div className="card-actions">
-                  <button className="btn btn-primary btn-block">
-                    View cart
-                  </button>
-                </div>
+               <Card></Card>
               </div>
             </div>
           </div>

@@ -3,6 +3,7 @@ import "../style/shere.css";
 import book1 from "../assets/Screenshot_20.png";
 import book2 from "../assets/science.jpg";
 import book3 from "../assets/img.jpg";
+import { NavLink } from "react-router-dom";
 const Hero = () => {
   return (
     <div className="hero min-h-screen bg-base-100">
@@ -63,7 +64,7 @@ const Hero = () => {
             to captivating memoirs, this week's releases offer something for
             everyone..
           </p>
-          <button className="btn coustom-button">explore more &rarr;</button>
+          <NavLink to="/books"><button className="btn coustom-button">explore more &rarr;</button></NavLink>
         </div>
       </div>
     </div>
