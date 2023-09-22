@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import'../../style/book.css'
 import { useAppDispatch } from "../../redux/hooks";
 import { addToCard } from "../../redux/Api/fetures/CardSlice";
-import { toast } from "react-toast";
+import { ToastContainer, toast } from "react-toast";
 import { IBook } from "../../types/Book";
 
 interface AllBooksProps {
@@ -35,6 +35,7 @@ const AllBooks= ({ book }:AllBooksProps) => {
          <p>revew:5.0 </p>
            <button onClick={()=>hendleAddtoCard(book)} className="btn coustom-button">Add To Card</button>
         </div>
+        <ToastContainer></ToastContainer>
        </div>
   );
 };

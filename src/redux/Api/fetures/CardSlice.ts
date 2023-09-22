@@ -21,11 +21,33 @@ export const CardSlice = createSlice({
       } else {
         state.books.push({...action.payload, quantity: 1})
       }
-      state.total+=action.payload.price
+      state.total += action.payload.price;
+    },
+    removeFromCart: (state, action: PayloadAction<IBook>) => {
+      const removedBook = state.books.find((book) => book._id === action.payload._id);
+      if (removedBook) {
+        state.total -= removedBook.price * removedBook.quantity!;
+        state.books = state.books.filter((book) => book._id !== action.payload._id);
+      }
+    },
+    increment: (state,action:PayloadAction<IBook>) => {
+      const Increment = state.books.find((book) => book._id === action.payload._id)
+      if (Increment) {
+        Increment.quantity! += 1
+        state.total+=action.payload.price
+      }
+    },
+    decrement: (state,action:PayloadAction<IBook>) => {
+      const Decrement = state.books.find((book) => book._id === action.payload._id)
+      if (Decrement && Decrement.quantity!>1) {
+        Decrement.quantity! -= 1
+        state.total-=action.payload.price
+      }
     }
-    
+   
+
   }
 })
 
-export const {addToCard} = CardSlice.actions
+export const {addToCard,removeFromCart,increment,decrement} = CardSlice.actions
 export default CardSlice.reducer

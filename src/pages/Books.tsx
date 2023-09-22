@@ -33,6 +33,9 @@ const Books = () => {
           <AllBooks key={book._id} book={book} />
         ))}
       </div>
+
+
+      {/* pagination here  */}
       <div className="flex mx-auto justify-center my-5 ">
         <NavLink to="">
         < button className="join-item btn mx-2 coustom-button ">1</button>

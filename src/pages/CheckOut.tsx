@@ -1,8 +1,19 @@
 import { AiFillDelete } from "react-icons/ai";
-import { useAppSelector } from "../redux/hooks";
+import { useAppDispatch, useAppSelector } from "../redux/hooks";
 import "../style/checkkOut.css";
+import { decrement, increment, removeFromCart } from "../redux/Api/fetures/CardSlice";
+import { IBook } from "../types/Book";
 const CheckOur = () => {
   const { books,total } = useAppSelector((state) => state.books);
+  const dispatch=useAppDispatch()
+  const hendleIncrement=(book:IBook)=>{
+    dispatch(increment(book))
+    
+  }
+  const hendleDecrement=(book:IBook)=>{
+    dispatch(decrement(book))
+
+  }
   return (
     <div className="master-container">
       <div className="card cart">
@@ -24,16 +35,16 @@ const CheckOur = () => {
                 <p className="mt-2 p-2">{book.Title}</p>
               </div>
               <div className="flex mt-10">
-                <button className="btn btn-sm text-xl m-1 coustom-button">
+                <button  onClick={()=>hendleIncrement(book)} className="btn btn-sm text-xl m-1 coustom-button">
                   +
                 </button>
                 <p className="text-xl mt-2">{book.quantity}</p>
-                <button className="btn btn-sm text-xl m-1 coustom-button">
+                <button onClick={()=>hendleDecrement(book)} className="btn btn-sm text-xl m-1 coustom-button">
                   -
                 </button>
               </div>
               <div className="mt-10">
-                <button className="btn btn-sm text-xl text-red-800 m-1 coustom-button">
+                <button onClick={()=>dispatch(removeFromCart(book))} className="btn btn-sm text-xl text-red-800 m-1 coustom-button">
                   <AiFillDelete />
                 </button>
               </div>
