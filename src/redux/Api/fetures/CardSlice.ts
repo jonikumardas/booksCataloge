@@ -5,11 +5,16 @@ interface ICart {
   books: IBook[];
   total: number;
 }
-const initialState:ICart = {
-  books: [],
-  total:0
-}
-
+const initializeCartState = () => {
+  const cardState = localStorage.getItem("cart");
+  return cardState
+    ? JSON.parse(cardState)
+    : {
+        books: [],
+        total: 0,
+      };
+};
+const initialState: ICart = initializeCartState();
 export const CardSlice = createSlice({
   name:'book',
   initialState,
@@ -22,6 +27,8 @@ export const CardSlice = createSlice({
         state.books.push({...action.payload, quantity: 1})
       }
       state.total += action.payload.price;
+      localStorage.setItem('cart', JSON.stringify(state));
+      
     },
     removeFromCart: (state, action: PayloadAction<IBook>) => {
       const removedBook = state.books.find((book) => book._id === action.payload._id);
@@ -29,6 +36,7 @@ export const CardSlice = createSlice({
         state.total -= removedBook.price * removedBook.quantity!;
         state.books = state.books.filter((book) => book._id !== action.payload._id);
       }
+      localStorage.setItem('cart', JSON.stringify(state));
     },
     increment: (state,action:PayloadAction<IBook>) => {
       const Increment = state.books.find((book) => book._id === action.payload._id)
@@ -36,6 +44,7 @@ export const CardSlice = createSlice({
         Increment.quantity! += 1
         state.total+=action.payload.price
       }
+      localStorage.setItem('cart', JSON.stringify(state));
     },
     decrement: (state,action:PayloadAction<IBook>) => {
       const Decrement = state.books.find((book) => book._id === action.payload._id)
@@ -43,9 +52,8 @@ export const CardSlice = createSlice({
         Decrement.quantity! -= 1
         state.total-=action.payload.price
       }
+      localStorage.setItem('cart', JSON.stringify(state));
     }
-   
-
   }
 })
 
